@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && parcel build --public-url ./ index.pug",
     "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
@@ -15,6 +16,7 @@
     "@parcel/transformer-pug": "^2.13.3",
     "@parcel/transformer-sass": "^2.13.3",
     "gh-pages": "^6.3.0",
-    "push-dir": "^0.4.1"
+    "push-dir": "^0.4.1",
+    "rimraf": "^6.0.1"
   }
 }
