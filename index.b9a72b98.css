@@ -14,24 +14,22 @@ html {
 }
 
 h1 {
-  margin-bottom: 0.725rem;
+  margin-bottom: .725rem;
   font-size: 3rem;
 }
 
 h2 {
-  margin-bottom: 0.3625rem;
+  margin-bottom: .3625rem;
   font-size: 1.4rem;
 }
 
-ul,
-ol {
+ul, ol {
   margin-top: 0;
   padding-left: 0;
   list-style-position: outside;
 }
 
-ul li,
-ol li {
+ul li, ol li {
   margin-bottom: 0;
 }
 
@@ -50,8 +48,7 @@ article header p {
   font-style: italic;
 }
 
-.experience-header,
-.education-item {
+.experience-header, .education-item {
   justify-content: space-between;
   display: flex;
 }
@@ -60,8 +57,7 @@ article header p {
   white-space: nowrap;
 }
 
-a,
-a :visited {
+a, a :visited {
   color: #000;
   text-decoration: none;
 }
@@ -73,13 +69,12 @@ a :visited {
 }
 
 @media only screen and (width <= 480px) {
-  html ul,
-  html ol {
+  html ul, html ol {
     padding-left: 0;
   }
 
   html header h1 {
-    line-height: 0.8em;
+    line-height: .8em;
   }
 
   html header p {
