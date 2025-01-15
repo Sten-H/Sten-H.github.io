@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
+// $base-font-size: 112.5
+$base-font-size: 100
+$line-height: 1.45
+
+@mixin line-height($number)
+  line-height: #{ $number * $line-height + 'rem'}
+
+@mixin margin-top($number)
+  margin-top: #{ $number * $line-height + 'rem'}
+
+@mixin margin-bottom($number)
+  margin-bottom: #{ $number * $line-height + 'rem'}
+
+* 
+  @include line-height(1)
+
+html
+    padding: 0 100px
+    font-size: #{$base-font-size + '%'} 
+    @include margin-top(2)
+    font-family: "Open Sans", serif
+    font-optical-sizing: auto
+    // font-weight: <weight>
+    font-style: normal
+    font-variation-settings: "wdth" 100
+
+h1
+    font-size: 3rem
+    @include margin-bottom(0.5)
+h2
+    font-size: 1.4rem
+    @include margin-bottom(0.25)
+
+ul, ol
+    padding-left: 0
+    list-style-position: outside
+    @include margin-top(0)
+    li 
+        @include margin-bottom(0)
+
+article
+    max-width: 800px
+    header
+        text-align: center
+        p 
+          font-style: italic
+          text-align: justify
+          text-justify: inter-word
+          padding: 0 5rem
+
+
+.experience-header, .education-item
+    display: flex
+    justify-content: space-between
+
+.education-date
+  white-space: nowrap
+
+a
+  color: black
+  text-decoration: none
+  :visited
+    color: black
+    text-decoration: none
+
+@media only screen and (max-width: 768px)
+    html
+        padding: 0 2rem
+
+@media only screen and (max-width: 480)
+  html
+    ul, ol
+        padding-left: 0
+    header
+      h1
+        line-height: 0.8em
+      p 
+        padding: 0
