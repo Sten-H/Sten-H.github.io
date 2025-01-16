@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.pug",
-    "build": "rimraf dist && parcel build --public-url ./ index.pug",
+    "build": "rimraf dist && parcel build --public-url ./ index.pug && echo stenh.com > dist/CNAME",
     "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
