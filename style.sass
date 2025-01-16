@@ -12,47 +12,79 @@ $line-height: 1.45
 @mixin margin-bottom($number)
   margin-bottom: #{ $number * $line-height + 'rem'}
 
-* 
+*
   @include line-height(1)
 
+html, body
+  padding: 0
+  margin: 0
+  max-width: 100wv
 html
-    padding: 0 100px
-    font-size: #{$base-font-size + '%'} 
-    @include margin-top(2)
-    font-family: "Open Sans", serif
-    font-optical-sizing: auto
-    // font-weight: <weight>
-    font-style: normal
-    font-variation-settings: "wdth" 100
+  font-size: #{$base-font-size + '%'}
+  font-family: "Open Sans", serif
+  font-optical-sizing: auto
+  font-style: normal
+  font-variation-settings: "wdth" 100
+
+body
+  display: grid
+  grid-template-columns: minmax(2rem, 8rem) auto 1fr
+  article
+    grid-column: 2 / 3
+    padding-top: 3rem
+    padding-bottom: 6rem
+  .images
+    grid-column: 3 / 4
+    background-image: url("img/cozzygiraffe.png")
+    background-repeat: no-repeat
+    background-position: 100% 100%
+    background-size: 200px auto
 
 h1
-    font-size: 3rem
-    @include margin-bottom(0.5)
+  font-size: 3rem
+  @include margin-bottom(0.5)
 h2
-    font-size: 1.4rem
-    @include margin-bottom(0.25)
+  font-size: 1.4rem
+  @include margin-bottom(0.5)
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    border-bottom: 1px solid black
 
 ul, ol
-    padding-left: 0
-    list-style-position: outside
-    @include margin-top(0)
-    li 
-        @include margin-bottom(0)
+  padding-left: 0
+  list-style-position: outside
+  @include margin-top(0)
+  li
+    @include margin-bottom(0)
 
 article
-    max-width: 800px
-    header
-        text-align: center
-        p 
-          font-style: italic
-          text-align: justify
-          text-justify: inter-word
-          padding: 0 5rem
-
+  width: 750px
+  header
+    position: relative
+    text-align: center
+    img
+      position: absolute
+      right: -5rem
+      bottom: -3rem
+      max-height: 300px
+      width: auto
+      z-index: 2
+      transform: rotateZ(7deg)
+    p
+      font-style: italic
+      text-align: justify
+      text-justify: inter-word
+      padding: 0 5rem
 
 .experience-header, .education-item
-    display: flex
-    justify-content: space-between
+  display: flex
+  justify-content: space-between
 
 .education-date
   white-space: nowrap
@@ -64,16 +96,31 @@ a
     color: black
     text-decoration: none
 
-@media only screen and (max-width: 768px)
-    html
-        padding: 0 2rem
+@media only screen and (max-width: 1200px)
+  body
+    grid-template-columns: 1fr
+    article
+      max-width: 750px
+      width: auto
+      grid-column: 1 / 2
+    .images
+      background-image: none
 
-@media only screen and (max-width: 480)
+@media only screen and (max-width: 1200px) and (min-width: 769px)
+  article
+    margin: 0 5rem
+
+@media only screen and (max-width: 768px)
+  header
+    img
+      display: none
   html
-    ul, ol
+    article
+      margin: 0 2rem
+      ul, ol
         padding-left: 0
-    header
-      h1
-        line-height: 0.8em
-      p 
-        padding: 0
+      header
+        h1
+          line-height: 0.8em
+        p
+          padding: 0

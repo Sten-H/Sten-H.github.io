@@ -2,9 +2,6 @@ mixin experience(position, company, location, date)
     .experience
         .experience-header
             strong #{company}
-            //- strong
-            //-     span #{position},&nbsp;
-            //- | #{company}
             span(class='experience-date')= date
         block
 
@@ -24,11 +21,11 @@ body
     article 
         header
             h1 Sten Holmberg
-            .title
             .contact-info
                 | Full Stack Developer |
                 a(href="mailto:mail@stenh.com") mail@stenh.com
-            p Software engineer with over 7 years of experience, passionate about end-to-end development and delivering solutions that users value. With a collaborative mindset and a focus on practical results, I thrive on contributing to seamless workflows and impactful applications.
+            p Software engineer with 7 years of experience and a background in design and animation. Experienced in building robust systems across the entire development stack, from data and backend to frontend and user interface design. I thrive in collaborative environments, creating seamless workflows and impactful applications.
+            img(src="./img/me.png" class="portrait")
         main
             h2 Skills
             +skill("Tech")
@@ -38,28 +35,37 @@ body
             h2 Experience 
             +experience('Full stack developer (consultant)', 'Dagens Industri', 'Stockholm, Sweden', 'Sep 2023- Sep 2024')
                 ul
-                    li Developed a course platform with NextJS, enabling titles like Dagens Industri to brand it as their own, and launched as a separate Bonnier-branded product called Bonnier Akademi
+                    li Developed a course platform with NextJS, enabling titles like Dagens Industri to brand it as their own, and led its launch as Bonnier Akademi, a standalone Bonnier-branded product
+                    li Implemented Adyen card payments as payment option for courses at Bonnier Akademi
                     li Led the effort to switch registration and payment flow of partner websites and internal applications to use the new course platform, enabling the decommissioning of legacy applications
                     li Optimized Github Actions CI/CD pipeline to speed up testing for a large monorepo with heavy end-to-end tests
+
             +experience('Full stack developer (consultant)', 'Expressen', 'Stockholm, Sweden', 'Aug 2023 - May 2024')
                 ul
                     li Developed a React application with NodeJS backend to streamline migrations from any CRM system to Salesforce
                     li Designed and implemented UI/UX of migration flow to help spot common errors and perform fixes on the data
-                    li Presented the migration tool to stakeholders and supported developers in implementing their CRM source, advancing Bonnier News' goal of consolidating CRM systems
+                    li Led the consolidation of CRM systems across Bonnier News by educating stakeholders and supporting teams in integrating CRM sources, resulting in the successful migration of over 300,000 newspaper subscriptions
                     li Developed a NodeJS service for Expressen’s infrastructure team to serve articles via a GraphQL-powered shared publishing platform
+
             +experience('Frontend stack developer (consultant)', 'Klarna', 'Stockholm, Sweden', 'Mar 2023 - Jul 2024')
                 ul
-                    li Created a React component that handled all communications to payment backends using a new payment protocol, this component was used to build several third-party payment methods, including Swish and MobilePay
-                    li Developed a React component in TypeScript that handles card payment iframe communications, simplifying implementation for teams offering card payment options
-                    li Collaborated with third parties, such as Nordea, to troubleshoot and resolve issues with 3D Secure authentication flows, ensuring secure and reliable payment processing
-                    li Conceived, designed, and implemented Carpenter, a React application for setting up payment scenarios and simulating card payments, improving testing efficiency and delivery speed.
-                    li Carpenter received positive feedback from developers and stakeholders, prompting a redesign to align with Klarna branding for stakeholder presentations showcasing card payments and its functionalities
+                    li Created several third-party payment methods like Swish and MobilePay by developing reusable React components and React hooks to manage all payment communications between frontends and backends using a new payment protocol
+                    li Collaborated with third parties, such as Nordea, to troubleshoot and resolve issues with 3D Secure authentication flows on card payments, ensuring secure and reliable payment processing
+                    li Conceived, designed, and implemented Carpenter, a React application for configuring payment scenarios and simulating card payments, which enhanced testing efficiency, accelerated delivery, and earned praise from developers and stakeholders, leading to its adoption and redesign for internal Klarna presentations
+
             +experience('Full stack developer', 'Modular Finance', 'Stockholm, Sweden', 'Mar 2023 - Apr 2024')
                 ul
                     li Developed a CMS for creating and publishing company press releases to channels like Nordnet, Avanza, and Cision, which became the company’s flagship product
                     li Led the development of the Angular frontend for press release creation and publication, including UI/UX design
                     li Developed functionality in Go backend service to securely store and serve sensitive press release content, ensuring data integrity and privacy compliance
                     li Built a Go microservice to manage press release distribution to mailing lists
+
+            +experience('Full stack developer', 'Datorn I utbildning', 'Stockholm, Sweden', '2014 - 2018')
+                ul
+                    li Maintained and further developed a PHP-based conference booking system
+                    li Developed a React application for nominating teachers for excellence in digital teaching
+
+
             h2 Education
             .education-item
                 .span 
@@ -67,7 +73,6 @@ body
                     | -&nbsp;
                     | Bachelor in computer science, Stockholms Universitet
                 .education-date 2014 - 2017
-
-
+    .images
 
 
